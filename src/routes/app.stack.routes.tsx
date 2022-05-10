@@ -5,16 +5,16 @@ import { Home } from '../screens/Home';
 import { CarDetails } from '../screens/CarDetails';
 import { Scheduling } from '../screens/Scheduling';
 import { SchedulingDetails } from '../screens/SchedulingDetails';
-import { SchedulingComplete } from '../screens/SchedulingComplete';
+import { Confirmation } from '../screens/Confirmation';
 import { MyCars } from '../screens/MyCars';
 import { Splash } from '../screens/Splash';
 
 const { Navigator, Screen } = createStackNavigator();
 
-export function StackRoutes() {
+export function AppStackRoutes() {
     return (
         //para nao aparecer o cabeçalho com o nome da tela, coloca o screenOptions
-        <Navigator screenOptions={{ headerShown: false }} >
+        <Navigator screenOptions={{ headerShown: false }} initialRouteName='Home'>
             {/* <Screen
                 name='Splash'
                 component={Splash}
@@ -36,8 +36,8 @@ export function StackRoutes() {
                 component={SchedulingDetails}
             />
             <Screen
-                name='SchedulingComplete'
-                component={SchedulingComplete}
+                name='Confirmation'
+                component={Confirmation}
             />
             <Screen
                 name='MyCars'

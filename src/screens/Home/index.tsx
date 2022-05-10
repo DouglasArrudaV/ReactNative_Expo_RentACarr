@@ -5,7 +5,6 @@ import {
     NavigationProp,
 } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useTheme } from 'styled-components';
 
@@ -22,7 +21,6 @@ import {
     HeaderContent,
     TotalCars,
     CarList,
-    MyCarsButton,
 } from './styles';
 
 export function Home() {
@@ -31,17 +29,6 @@ export function Home() {
 
     const navigation = useNavigation<NavigationProp<ParamListBase>>();
     const theme = useTheme();
-
-    // //Nao vai mais ser usado esse objeto, pois já está sendo consumido pela api
-    // const carData = {
-    //     brand: 'Audi',
-    //     name: 'RS 5 Coupé',
-    //     rent: {
-    //         period: 'AO DIA',
-    //         price: 120,
-    //     },
-    //     thumbnail: 'https://img2.gratispng.com/20180628/stg/kisspng-2018-audi-s5-3-0t-premium-plus-coupe-audi-rs5-2017-2018-audi-a5-coupe-5b35130451d959.0738564215302049323353.jpg'
-    // }
 
     function handleCarDetails(car: CarDTO) {
         navigation.navigate('CarDetails', { car })
@@ -95,15 +82,6 @@ export function Home() {
                     }
                 />
             }
-
-            <MyCarsButton onPress={handleOpenMyCars}>
-                <Ionicons
-                    name='ios-car-sport'
-                    size={32}
-                    color={theme.colors.shape}
-                />
-            </MyCarsButton>
-
         </Container>
     );
 }
